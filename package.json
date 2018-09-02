@@ -1,0 +1,16 @@
+{
+  "name": "magic-patatap",
+  "version": "1.0.0",
+  "description": "Play Patatap in group",
+  "homepage": "https://github.com/luiscarlin/magic-patatap",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luiscarlin/magic-patatap.git"
+  },
+  "keywords": [],
+  "author": "Luis Carlin",
+  "license": "ISC"
+}
