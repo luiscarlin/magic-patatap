@@ -1,16 +1,21 @@
 {
   "name": "magic-patatap",
   "version": "1.0.0",
-  "description": "Play Patatap in group",
+  "description": "Play Patatap",
+  "author": {
+    "name": "Luis Carlin",
+    "email": "luiscarlin@gmail.com",
+    "url": "https://github.com/luiscarlin"
+  },
   "homepage": "https://github.com/luiscarlin/magic-patatap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luiscarlin/magic-patatap.git"
+  },
+  "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/luiscarlin/magic-patatap.git"
-  },
-  "keywords": [],
-  "author": "Luis Carlin",
-  "license": "ISC"
+  "dependencies" : {},
+  "devDependencies": {}
 }
