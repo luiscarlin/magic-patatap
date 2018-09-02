@@ -4,7 +4,7 @@ Play Patatap real time with the world.
 
 ## License
 
-WTFPL – Do What the Fuck You Want to Public License
+WTFPL – Do What the F*** You Want to Public License
 
 ## Acknowledgments
 
