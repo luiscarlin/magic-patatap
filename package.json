@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://github.com/luiscarlin/magic-patatap.git"
   },
-  "license": "MIT",
+  "license": "WTFPL",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
