@@ -1,2 +1,12 @@
-# magic-patatap
+# Magic Patatap
 
+Play Patatap real time with the world.
+
+## License
+
+WTFPL – Do What the Fuck You Want to Public License
+
+## Acknowledgments
+
+- Forked from https://github.com/SamCarlin/patatap.git
+- Inspired by https://github.com/SaraVieira/magic-instruments.git
