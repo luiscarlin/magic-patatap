@@ -2,6 +2,7 @@
   "name": "magic-patatap",
   "version": "1.0.0",
   "description": "Play Patatap",
+  "private": true,
   "author": {
     "name": "Luis Carlin",
     "email": "luiscarlin@gmail.com",
@@ -14,18 +15,20 @@
   },
   "license": "WTFPL",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "dependencies": {
+    "howler": "^2.0.15",
+    "paper": "^0.11.5"
   },
   "devDependencies": {
-    "webpack": "^4.17.1",
-    "webpack-cli": "^3.1.0",
     "eslint": "^5.5.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.0",
-    "eslint-plugin-standard": "^4.0.0"
+    "eslint-plugin-standard": "^4.0.0",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0"
   }
 }
