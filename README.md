@@ -1,6 +1,6 @@
 # Magic Patatap
 
-Play Patatap real time with the world.
+Play Patatap in real time with the world.
 
 ## License
 
