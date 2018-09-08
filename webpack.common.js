@@ -1,6 +1,12 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+
+const copyFiles = [
+  { from: './src/media/', to: './media' }
+]
 
 module.exports = {
   entry: {
@@ -11,7 +17,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
       favicon: './public/favicon.ico'
-    })
+    }),
+    new CopyWebpackPlugin(copyFiles)
   ],
   output: {
     filename: '[name].bundle.js',
@@ -23,7 +30,7 @@ module.exports = {
         test: /\.js$/,
         use: {
           loader: "babel-loader",
-          options: { presets: ["es2015"] }
+          options: { presets: ['@babel/preset-env'] }
         }
       },
       {

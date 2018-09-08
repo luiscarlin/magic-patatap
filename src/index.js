@@ -1,2 +1,4 @@
-import './styles/circles.scss';
-console.log("Hello world")
+import './styles/circles.scss'
+import circles from './js/circles'
+
+circles()
