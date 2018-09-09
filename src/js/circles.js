@@ -1,36 +1,42 @@
 import paper from 'paper'
 import notes from './notes'
 
-var circles = [];
+let circles = []
 
-const addKeyEvents = (notes) => {
-  window.addEventListener('keydown', event => {
-    console.log("pressed key", event.key)
-    // console.log(paper.view.size.width)
-    if (notes[event.key]) {
-      // var maxPoint = new paper.Point(10, 10);
-      // var randomPoint = paper.Point.random();
-      // var point = maxPoint * randomPoint;
-      // var newCircle = new paper.Path.Circle(point, 500);
-      // newCircle.fillColor = notes[event.key].color;
-      notes[event.key].sound.play();
-      // circles.push(newCircle);
+const initializePaper = () => {
+  let canvas = window.document.getElementById('circleCanvas')
+  paper.setup(canvas)
+  paper.view.onFrame = onFrame
+}
+
+const onFrame = () => {
+  circles.forEach((circle, index, object) => {
+    circle.fillColor.hue += 1
+    circle.scale(.9)
+
+    if (circle.area < 1) {
+      object.splice(index, 1)
     }
   })
 }
 
-// const onFrame = (event) => {
-//   for (var i = 0; i < circles.length; i++) {
-//     circles[i].fillColor.hue += 1;
-//     circles[i].scale(.9);
-//     if (circles[i].area < 1) {
-//       circles[i].remove();
-//       circles.splice(i, 1);
-//       console.log(circles);
-//     }
-//   }
-// }
+const addKeyEvents = () => {
+  window.addEventListener('keydown', event => {
+    if (notes[event.key]) {
+      const maxPoint = new paper.Point(paper.view.size.width, paper.view.size.height)
+      const randomPoint = paper.Point.random()
+      const point = maxPoint.multiply(randomPoint)
+
+      const newCircle = new paper.Path.Circle(point, 500)
+      newCircle.fillColor = notes[event.key].color
+      notes[event.key].sound.play()
+
+      circles.push(newCircle)
+    }
+  })
+}
 
 export default () => {
-  addKeyEvents(notes)
+  initializePaper()
+  addKeyEvents()
 }
