@@ -12,7 +12,7 @@ const initializePaper = () => {
 const onFrame = () => {
   circles.forEach((circle, index, object) => {
     circle.fillColor.hue += 1
-    circle.scale(.9)
+    circle.scale(0.9)
 
     if (circle.area < 1) {
       circle.remove()
