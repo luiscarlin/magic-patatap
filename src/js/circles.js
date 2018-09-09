@@ -1,46 +1,46 @@
-import paper from "paper";
-import notes from "./notes";
+import paper from 'paper'
+import notes from './notes'
 
-let circles = [];
+let circles = []
 
 const initializePaper = () => {
-  let canvas = window.document.getElementById("circleCanvas");
-  paper.setup(canvas);
-  paper.view.onFrame = onFrame;
-};
+  let canvas = window.document.getElementById('circleCanvas')
+  paper.setup(canvas)
+  paper.view.onFrame = onFrame
+}
 
 const onFrame = () => {
   circles.forEach((circle, index, object) => {
-    circle.fillColor.hue += 1;
-    circle.scale(0.9);
+    circle.fillColor.hue += 1
+    circle.scale(0.9)
 
     if (circle.area < 1) {
-      circle.remove();
-      object.splice(index, 1);
+      circle.remove()
+      object.splice(index, 1)
     }
-  });
-};
+  })
+}
 
 const addKeyEvents = () => {
-  window.addEventListener("keydown", event => {
+  window.addEventListener('keydown', event => {
     if (notes[event.key]) {
       const maxPoint = new paper.Point(
         paper.view.size.width,
         paper.view.size.height
-      );
-      const randomPoint = paper.Point.random();
-      const point = maxPoint.multiply(randomPoint);
+      )
+      const randomPoint = paper.Point.random()
+      const point = maxPoint.multiply(randomPoint)
 
-      const newCircle = new paper.Path.Circle(point, 500);
-      newCircle.fillColor = notes[event.key].color;
-      notes[event.key].sound.play();
+      const newCircle = new paper.Path.Circle(point, 500)
+      newCircle.fillColor = notes[event.key].color
+      notes[event.key].sound.play()
 
-      circles.push(newCircle);
+      circles.push(newCircle)
     }
-  });
-};
+  })
+}
 
 export default () => {
-  initializePaper();
-  addKeyEvents();
-};
+  initializePaper()
+  addKeyEvents()
+}
