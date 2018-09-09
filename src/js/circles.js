@@ -15,6 +15,7 @@ const onFrame = () => {
     circle.scale(.9)
 
     if (circle.area < 1) {
+      circle.remove()
       object.splice(index, 1)
     }
   })
