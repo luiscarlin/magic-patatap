@@ -1,4 +1,4 @@
-import './styles/circles.scss'
-import circles from './js/circles'
+import "./styles/circles.scss";
+import circles from "./js/circles";
 
-circles()
+circles();
