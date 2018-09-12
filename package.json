@@ -14,6 +14,10 @@
     "url": "https://github.com/LuisCarlin/magic-patatap.git"
   },
   "license": "WTFPL",
+  "now": {
+    "name": "magic-patatap",
+    "alias":"magicpatatap"
+  },
   "scripts": {
     "predeploy": "yarn build",
     "now-start": "node server.js",
