@@ -16,7 +16,7 @@
   "license": "WTFPL",
   "now": {
     "name": "magic-patatap",
-    "alias":"magicpatatap"
+    "alias": "magicpatatap"
   },
   "scripts": {
     "predeploy": "yarn build",
@@ -30,7 +30,8 @@
   "dependencies": {
     "express": "^4.16.3",
     "howler": "^2.0.15",
-    "paper": "^0.11.5"
+    "paper": "^0.11.5",
+    "socket.io": "^2.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
