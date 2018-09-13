@@ -19,11 +19,11 @@
     "alias": "magicpatatap"
   },
   "scripts": {
-    "predeploy": "yarn build",
+    "predeploy": "yarn lint && yarn format",
     "now-start": "node server.js",
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "deploy": "now --public && now alias && now rm magic-patatap --safe --yes || true",
+    "deploy": "now --public && now alias && now rm magic-patatap --safe --yes",
     "lint": "eslint ./src --fix",
     "format": "prettier --write '**/*.{js,css,md}'"
   },

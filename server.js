@@ -2,32 +2,24 @@ const express = require('express')
 const path = require('path')
 const app = express()
 const http = require('http').Server(app)
-// const io = require('socket.io')(http)
+const io = require('socket.io')(http)
 
 const DIST_DIR = path.join(__dirname, 'dist')
 
 // const users = { total: 0 }
-// io.on('connection', socket => {
-//   // Handle user counts
-//   users.total++
 
-//   // register on disconnect
+// io.on('connection', socket => {
+//   users.total += 1
+
 //   socket.on('disconnect', () => {
 //     users.total--
 //     io.emit('users', users.total)
 //   })
+
 //   io.emit('users', users.total)
 
-//   // Handle incoming messages
-//   // Someone played a note
-//   socket.on('played note', key => {
-//     // send it just to their room
-//     if (socket.room) {
-//       socket.broadcast.to(socket.room).emit('played', key)
-//     } else {
-//       // fallback, shouldn't ever get here
-//       socket.broadcast.emit('played', key)
-//     }
+//   socket.on('played a key', key => {
+//     socket.broadcast.emit('played', key)
 //   })
 
 //   // User wants to change rooms
