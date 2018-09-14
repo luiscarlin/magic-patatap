@@ -6,17 +6,17 @@ const io = require('socket.io')(http)
 
 const DIST_DIR = path.join(__dirname, 'dist')
 
-// const users = { total: 0 }
+const users = { total: 0 }
 
-// io.on('connection', socket => {
-//   users.total += 1
+io.on('connection', socket => {
+  users.total += 1
 
-//   socket.on('disconnect', () => {
-//     users.total--
-//     io.emit('users', users.total)
-//   })
+  socket.on('disconnect', () => {
+    users.total--
+    io.emit('users', users.total)
+  })
 
-//   io.emit('users', users.total)
+  io.emit('users', users.total)
 
 //   socket.on('played a key', key => {
 //     socket.broadcast.emit('played', key)
@@ -43,7 +43,7 @@ const DIST_DIR = path.join(__dirname, 'dist')
 //     }
 //     io.to(socket.room).emit('roomusers', users[socket.room])
 //   })
-// })
+})
 
 app.use(express.static(DIST_DIR))
 
