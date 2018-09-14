@@ -1,5 +1,12 @@
 import paper from 'paper'
 import notes from './notes'
+import io from 'socket.io-client'
+
+const socket = io()
+
+socket.on('users', count => {
+  console.log('number of users ', count)
+})
 
 let circles = []
 
