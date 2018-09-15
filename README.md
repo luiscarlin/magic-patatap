@@ -2,6 +2,21 @@
 
 Play Patatap in real time with the world.
 
+
+## Run
+
+```bash
+git clone https://github.com/LuisCarlin/magic-patatap && cd magic-patatap
+
+yarn
+
+# run locally
+yarn start
+
+# deploy to prod
+yarn deploy
+```
+
 ## License
 
 WTFPL – Do What the F\*\*\* You Want to Public License
