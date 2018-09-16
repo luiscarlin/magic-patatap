@@ -27,11 +27,13 @@ const initializePaper = () => {
   }
 }
 
-const removeWelcomeHandler = () => {
-  console.log('hello')
+const removeWelcomeHandler = event => {
   let welcome = window.document.getElementById('welcome')
-  welcome.classList.add('hide')
-  window.removeEventListener('keydown', removeWelcomeHandler)
+
+  if (notes[event.key]) {
+    welcome.classList.add('hide')
+    window.removeEventListener('keydown', removeWelcomeHandler)
+  }
 }
 
 const attemptPlayNoteHandler = event => {
