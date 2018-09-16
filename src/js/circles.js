@@ -11,6 +11,23 @@ const initializeSocketio = () => {
     window.document.getElementById('users-message').innerText =
       count === 1 ? 'player' : 'players'
   })
+
+  socket.on('server-pressed-key', key => play(key))
+}
+
+const play = (key) => {
+  const maxPoint = new paper.Point(
+    paper.view.size.width,
+    paper.view.size.height
+  )
+  const randomPoint = paper.Point.random()
+  const point = maxPoint.multiply(randomPoint)
+
+  const newCircle = new paper.Path.Circle(point, 500)
+  newCircle.fillColor = notes[key].color
+  notes[key].sound.play()
+
+  circles.push(newCircle)
 }
 
 const initializePaper = () => {
@@ -40,18 +57,8 @@ const removeWelcomeHandler = event => {
 
 const attemptPlayNoteHandler = event => {
   if (notes[event.key]) {
-    const maxPoint = new paper.Point(
-      paper.view.size.width,
-      paper.view.size.height
-    )
-    const randomPoint = paper.Point.random()
-    const point = maxPoint.multiply(randomPoint)
-
-    const newCircle = new paper.Path.Circle(point, 500)
-    newCircle.fillColor = notes[event.key].color
-    notes[event.key].sound.play()
-
-    circles.push(newCircle)
+    socket.emit('client-pressed-key', event.key)
+     play(event.key)
   }
 }
 
