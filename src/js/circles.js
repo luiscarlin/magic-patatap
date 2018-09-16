@@ -8,7 +8,8 @@ let circles = []
 const initializeSocketio = () => {
   socket.on('users', count => {
     window.document.getElementById('users-count').innerText = count
-    window.document.getElementById('users-message').innerText = count === 1 ? "player" : "players"
+    window.document.getElementById('users-message').innerText =
+      count === 1 ? 'player' : 'players'
   })
 }
 
