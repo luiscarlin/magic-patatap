@@ -23,16 +23,31 @@ body, html {
   flex-direction: column;
   justify-content: center;
 
-  .title {
-    text-align: center;
-
-  }
-
-  .instructions {
+  * {
     text-align: center;
   }
 }
 
 .hide {
   display: none;
+}
+
+.users {
+  border-radius: 50%;
+  background: yellow;
+  border: 3px solid red;
+  position: fixed;
+  top: 0;
+  right: 0;
+  min-width: 100px;
+  min-height: 100px;
+  margin-top: 1em;
+  margin-right: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  * {
+    text-align: center;
+  }
 }

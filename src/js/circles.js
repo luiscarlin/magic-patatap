@@ -7,12 +7,13 @@ let circles = []
 
 const initializeSocketio = () => {
   socket.on('users', count => {
-    console.log('number of users ', count)
+    window.document.getElementById('users-count').innerText = count
+    window.document.getElementById('users-message').innerText = count === 1 ? "player" : "players"
   })
 }
 
 const initializePaper = () => {
-  let canvas = window.document.getElementById('circleCanvas')
+  let canvas = window.document.getElementById('circle-canvas')
   paper.setup(canvas)
   paper.view.onFrame = () => {
     circles.forEach((circle, index, object) => {
