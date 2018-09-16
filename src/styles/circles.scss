@@ -18,9 +18,6 @@ body, html {
   left: 50%;
   min-width: 300px;
   min-height: 300px;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
