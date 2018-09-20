@@ -34,7 +34,7 @@ const removeWelcomeHandler = () => {
   window.removeEventListener('keydown', removeWelcomeHandler)
 }
 
-const attemptPlayNoteHandler = (event) => {
+const attemptPlayNoteHandler = event => {
   if (notes[event.key]) {
     const maxPoint = new paper.Point(
       paper.view.size.width,

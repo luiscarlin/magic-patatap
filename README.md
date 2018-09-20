@@ -2,7 +2,6 @@
 
 Play Patatap in real time with the world.
 
-
 ## Run
 
 ```bash
