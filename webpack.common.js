@@ -2,14 +2,18 @@ const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const copyFiles = [{ from: './src/media/', to: './media' }]
+
+const extractCSS = new ExtractTextPlugin('styles.min.css')
 
 module.exports = {
   entry: {
     app: './src/index.js'
   },
   plugins: [
+    extractCSS,
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       template: './public/index.html',
@@ -32,17 +36,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader'
-          },
-          {
-            loader: 'sass-loader'
-          }
-        ]
+        use: extractCSS.extract(['css-loader', 'sass-loader'])
       }
     ]
   }

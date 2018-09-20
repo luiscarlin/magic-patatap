@@ -18,24 +18,36 @@ body, html {
   left: 50%;
   min-width: 300px;
   min-height: 300px;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  .title {
-    text-align: center;
-
-  }
-
-  .instructions {
+  * {
     text-align: center;
   }
 }
 
 .hide {
   display: none;
+}
+
+.users {
+  border-radius: 50%;
+  background: yellow;
+  border: 3px solid red;
+  position: fixed;
+  top: 0;
+  right: 0;
+  min-width: 100px;
+  min-height: 100px;
+  margin-top: 1em;
+  margin-right: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  * {
+    text-align: center;
+  }
 }
