@@ -18,9 +18,9 @@ io.on('connection', socket => {
 
   io.emit('users', users.total)
 
-    socket.on('client-pressed-key', key => {
-      socket.broadcast.emit('server-pressed-key', key)
-    })
+  socket.on('client-pressed-key', key => {
+    socket.broadcast.emit('server-pressed-key', key)
+  })
 })
 
 app.use(express.static(DIST_DIR))

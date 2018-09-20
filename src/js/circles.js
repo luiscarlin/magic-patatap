@@ -15,7 +15,7 @@ const initializeSocketio = () => {
   socket.on('server-pressed-key', key => play(key))
 }
 
-const play = (key) => {
+const play = key => {
   const maxPoint = new paper.Point(
     paper.view.size.width,
     paper.view.size.height
@@ -58,7 +58,7 @@ const removeWelcomeHandler = event => {
 const attemptPlayNoteHandler = event => {
   if (notes[event.key]) {
     socket.emit('client-pressed-key', event.key)
-     play(event.key)
+    play(event.key)
   }
 }
 
