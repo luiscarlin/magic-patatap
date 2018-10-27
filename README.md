@@ -12,7 +12,7 @@ yarn
 # run locally
 yarn start
 
-# deploy to prod
+# bundle and deploy to prod
 yarn deploy
 ```
 
